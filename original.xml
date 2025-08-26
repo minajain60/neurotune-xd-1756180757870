@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebDynpro xmlns="http://www.sap.com/wd/webdynpro">
+  <View name="ME23nLikeView">
+    <Title>Purchase Order Detail</Title>
+    <FormContainer id="formContainer1">
+      <FormElement id="formElementHeader">
+        <Label text="Purchase Order Number" id="labelPONumber"/>
+        <InputField id="inputFieldPONumber" value="{/data/poNumber}" tooltip="Enter Purchase Order Number"/>
+      </FormElement>
+      <FormElement id="formElementVendor">
+        <Label text="Vendor" id="labelVendor"/>
+        <InputField id="inputFieldVendor" value="{/data/vendor}" tooltip="Enter Vendor"/>
+      </FormElement>
+      <FormElement id="formElementDate">
+        <Label text="Purchase Order Date" id="labelPODate"/>
+        <InputField id="inputFieldPODate" value="{/data/poDate}" tooltip="Enter Purchase Order Date"/>
+      </FormElement>
+      <FormElement id="formElementItems">
+        <Table id="tableItems">
+          <Columns>
+            <Column id="columnItemNumber">
+              <Label text="Item Number"/>
+            </Column>
+            <Column id="columnMaterial">
+              <Label text="Material"/>
+            </Column>
+            <Column id="columnDescription">
+              <Label text="Description"/>
+            </Column>
+            <Column id="columnQuantity">
+              <Label text="Quantity"/>
+            </Column>
+            <Column id="columnPrice">
+              <Label text="Price"/>
+            </Column>
+          </Columns>
+          <!-- Sample data for testing -->
+          <Rows>
+            <Row>
+              <cells>
+                <cell value="10"/>
+                <cell value="MAT0001"/>
+                <cell value="Material Description 1"/>
+                <cell value="100"/>
+                <cell value="10.00"/>
+              </cells>
+            </Row>
+            <Row>
+              <cells>
+                <cell value="20"/>
+                <cell value="MAT0002"/>
+                <cell value="Material Description 2"/>
+                <cell value="50"/>
+                <cell value="20.00"/>
+              </cells>
+            </Row>
+          </Rows>
+        </Table>
+      </FormElement>
+      <FormElement id="formElementButtons">
+        <Button text="Display" id="buttonDisplay" press="handleDisplay"/>
+        <Button text="Save" id="buttonSave" press="handleSave"/>
+      </FormElement>
+    </FormContainer>
+    <MessageArea id="messageArea"/>
+  </View>
+  <Controller name="ME23nLikeViewController">
+    <!-- Methods for handling user interactions -->
+    <method name="handleDisplay">
+      <![CDATA[
+        //Implementation to display the Purchase Order data based on input
+        //  This would typically involve a call to a backend service.
+      ]]>
+    </method>
+    <method name="handleSave">
+      <![CDATA[
+        //Implementation to save the Purchase Order data.
+        // This would typically involve a call to a backend service.
+      ]]>
+    </method>
+  </Controller>
+</WebDynpro>
