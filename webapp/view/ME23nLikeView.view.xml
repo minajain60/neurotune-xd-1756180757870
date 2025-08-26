@@ -1,22 +1,100 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mvc:View xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:layout="sap.ui.layout"
-  xmlns:form="sap.ui.layout.form"
-  xmlns:core="sap.ui.core"
-  xmlns:richtexteditor="sap.ui.richtexteditor"
-  xmlns:viz="sap.viz.ui5"
-  controllerName="preview.app.controller.ME23nLikeView"
-  displayBlock="true">
-  <Page title="ME23nLikeView" enableScrolling="true">
+          xmlns="sap.m"
+          xmlns:layout="sap.ui.layout"
+          xmlns:form="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+          controllerName="converted.me23nlikeview.controller.ME23nLikeView"
+          displayBlock="true"
+          height="100%"
+          xmlns:commons="sap.ui.commons">
+  <Page title="ME23nLikeView" showHeader="true">
     <content>
-      <Title id="title_f8pwqq3y" text="Purchase Order Detail"/>
-      <form:SimpleForm id="formContainer1">
+      <!-- Purchase Order Detail Form -->
+      <form:SimpleForm id="formContainer1"
+                       editable="false"
+                       layout="ResponsiveGridLayout"
+                       title="Purchase Order Detail"
+                       labelSpanXL="3"
+                       labelSpanL="3"
+                       labelSpanM="3"
+                       labelSpanS="12"
+                       adjustLabelSpan="false"
+                       emptySpanXL="4"
+                       emptySpanL="4"
+                       emptySpanM="4"
+                       emptySpanS="0"
+                       columnsXL="1"
+                       columnsL="1"
+                       columnsM="1"
+                       singleContainerFullSize="false">
         <form:content>
-          <!-- Empty SimpleForm content -->
+          <Title text="Purchase Order Information" />
+          <Label text="Purchase Order Number" id="labelPONumber"/>
+          <Input id="inputFieldPONumber" value="{po>/poNumber}" tooltip="Enter Purchase Order Number" editable="false"/>
+
+          <Label text="Vendor" id="labelVendor"/>
+          <Input id="inputFieldVendor" value="{po>/vendor}" tooltip="Enter Vendor" editable="false"/>
+
+          <Label text="Purchase Order Date" id="labelPODate"/>
+          <Input id="inputFieldPODate" value="{po>/poDate}" tooltip="Enter Purchase Order Date" editable="false"/>
+          
+          <Title text="Purchase Order Items" />
+
+          <!-- Purchase Order Items Table -->
+          <Table id="tableItems" items="{poItems>/poItems}">
+            <columns>
+              <Column id="columnItemNumber">
+                <header>
+                  <Text text="Item Number"/>
+                </header>
+              </Column>
+              <Column id="columnMaterial">
+                <header>
+                  <Text text="Material"/>
+                </header>
+              </Column>
+              <Column id="columnDescription">
+                <header>
+                  <Text text="Description"/>
+                </header>
+              </Column>
+              <Column id="columnQuantity">
+                <header>
+                  <Text text="Quantity"/>
+                </header>
+              </Column>
+              <Column id="columnPrice">
+                <header>
+                  <Text text="Price"/>
+                </header>
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{poItems>itemNumber}"/>
+                  <Text text="{poItems>material}"/>
+                  <Text text="{poItems>description}"/>
+                  <Text text="{poItems>quantity}"/>
+                  <Text text="{poItems>price}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+
+          <Title text="Actions" />
+
+          <!-- Buttons -->
+          <Button text="Display" id="buttonDisplay" press="handleDisplay"/>
+          <Button text="Save" id="buttonSave" press="handleSave"/>
+
         </form:content>
       </form:SimpleForm>
-      <MessagePopover id="messageArea"/>
+      <!-- Message Area -->
+      <MessagePopover id="messagePopoverBtn"
+                      placement="Bottom">
+      </MessagePopover>
+
     </content>
   </Page>
 </mvc:View>

@@ -1,0 +1,74 @@
+{
+  "poItems": [
+    {
+      "itemNumber": "10",
+      "material": "MAT0001",
+      "description": "Material Description 1",
+      "quantity": "100",
+      "price": "10.00"
+    },
+    {
+      "itemNumber": "20",
+      "material": "MAT0002",
+      "description": "Material Description 2",
+      "quantity": "50",
+      "price": "20.00"
+    },
+    {
+      "itemNumber": "30",
+      "material": "MAT0003",
+      "description": "Material Description 3",
+      "quantity": "75",
+      "price": "15.00"
+    },
+    {
+      "itemNumber": "40",
+      "material": "MAT0004",
+      "description": "Material Description 4",
+      "quantity": "120",
+      "price": "25.00"
+    },
+    {
+      "itemNumber": "50",
+      "material": "MAT0005",
+      "description": "Material Description 5",
+      "quantity": "90",
+      "price": "18.00"
+    },
+    {
+      "itemNumber": "60",
+      "material": "MAT0006",
+      "description": "Material Description 6",
+      "quantity": "60",
+      "price": "22.00"
+    },
+    {
+      "itemNumber": "70",
+      "material": "MAT0007",
+      "description": "Material Description 7",
+      "quantity": "80",
+      "price": "17.00"
+    },
+    {
+      "itemNumber": "80",
+      "material": "MAT0008",
+      "description": "Material Description 8",
+      "quantity": "110",
+      "price": "28.00"
+    },
+    {
+      "itemNumber": "90",
+      "material": "MAT0009",
+      "description": "Material Description 9",
+      "quantity": "70",
+      "price": "19.00"
+    },
+    {
+      "itemNumber": "100",
+      "material": "MAT0010",
+      "description": "Material Description 10",
+      "quantity": "105",
+      "price": "21.00"
+    }
+  ]
+}
